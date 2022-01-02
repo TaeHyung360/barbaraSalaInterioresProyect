@@ -1,0 +1,250 @@
+/*=========================================================================================*/
+/*
+Nombre archivo: estilosProyectos.css
+Autor: Juan Ferrera Sala
+Fecha: 02/01/202
+*/
+/*=========================================================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+*{
+    box-sizing:border-box;
+    font-family: 'Overpass', sans-serif;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+  ul {
+    list-style: none;
+  }
+  
+  button {
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  button:active {
+    color: black;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  body {
+    font: normal 16px/1.5 Helvetica, sans-serif;
+  }
+  
+  
+  /* .top-banner
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+  .top-banner-overlay.is-moved {
+    transform: translateX(350px);
+  }
+  
+  .top-banner-overlay.is-moved::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    width: 20px;
+    box-shadow: 0 0 10px black;
+  }
+  
+  .top-banner-overlay p {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .top-nav li + li {
+    margin-top: 7px;
+  }
+  
+  
+  /* .menu-wrapper
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .menu{
+      margin-top: 4.8rem;
+  }
+  .top-nav .menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    padding: 20px;
+    transform: translateX(-200px);
+    transition: transform .7s;
+    background: #B1FFE5;
+  }
+  
+  .top-nav .menu-wrapper.is-opened {
+    transform: translateX(150px);
+  }
+  
+  .top-nav .menu-wrapper .menu {
+    opacity: 0;
+    transition: opacity .4s;
+  }
+  
+  .top-nav .menu-wrapper.is-opened .menu {
+    opacity: 1;
+    transition-delay: .6s;
+  }
+  
+  .top-nav .menu-wrapper .menu a {
+    font-size: 1.2rem;
+  }
+  
+  
+  /* .fixed menu 
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .top-nav .fixed-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    padding: 20px;
+    background: aquamarine;
+  }
+  
+  .top-nav .fixed-menu .menu-open {
+    font-size: 1.8rem;
+    text-align: left;
+    margin: 30px 0 auto;
+    width: 28px;
+  }
+
+
+/* Gallery Section */
+
+.contenedorGaleria{
+    margin-top: 9rem;
+}
+
+.container {
+    max-width: 93.5rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem -1rem;
+    padding-bottom: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    flex: 1 0 22rem;
+    margin: 1rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.gallery-item:hover .gallery-item-info,
+.gallery-item:focus .gallery-item-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item-info {
+    display: none;
+}
+
+.gallery-item-info li {
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.gallery-item-likes {
+    margin-right: 2.2rem;
+}
+
+.gallery-item-type {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.fa-clone,
+.fa-comment {
+    transform: rotateY(180deg);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Spinner Animation */
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+
+The following code will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox & floated styling. 
+
+*/
+
+@supports (display: grid) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        grid-gap: 2rem;
+    }
+
+    .gallery-item,
+    .gallery {
+        width: auto;
+        margin: 0;
+        
+    }
+}
